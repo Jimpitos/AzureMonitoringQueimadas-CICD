@@ -1,0 +1,6 @@
+*.json
+azure-crede
+.terraform/
+*.tfstate*
+infra.sh
+bootstrap.sh
