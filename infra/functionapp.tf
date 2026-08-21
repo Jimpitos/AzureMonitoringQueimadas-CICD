@@ -7,11 +7,11 @@ resource "azurerm_storage_account" "func_storage" {
 }
 
 resource "azurerm_service_plan" "func_plan" {
-  name                = "plan-queimadas-555295"
+  name                = "plan-queimadas-${var.rm}"
   resource_group_name = azurerm_resource_group.rg.name
   location            = azurerm_resource_group.rg.location
   os_type             = "Linux"
-  sku_name            = "Y1"
+  sku_name            = "B1"
 }
 
 resource "azurerm_linux_function_app" "func" {
@@ -29,10 +29,10 @@ resource "azurerm_linux_function_app" "func" {
   }
 
   app_settings = {
-    FUNCTIONS_WORKER_RUNTIME = "python"
-    SQL_SERVER               = azurerm_mysql_flexible_server.mysql.fqdn
-    SQL_USER                 = var.mysql_admin_user
-    SQL_PASS                 = var.mysql_admin_password
-    SQL_DB                   = var.sql_db_name
+    "FUNCTIONS_WORKER_RUNTIME" = "python"
+    "DB_HOST"                  = azurerm_mysql_flexible_server.mysql.fqdn
+    "DB_USER"                  = var.mysql_admin_user
+    "DB_PASSWORD"              = var.mysql_admin_password
+    "DB_NAME"                  = var.sql_db_name
   }
 }

@@ -7,7 +7,7 @@ variable "rm" {
 variable "location" {
   description = "Regiao dos recursos Azure"
   type        = string
-  default     = "eastus"
+  default     = "southafricanorth"
 }
 
 variable "resource_group_name" {
@@ -45,5 +45,3 @@ variable "storage_account_name" {
   type        = string
   default     = "stqueimadasfunc555295"
 }
-# As variaveis acr_name, aci_name e webapp_image_tag serao
-# adicionadas neste mesmo arquivo no Dia 2.
