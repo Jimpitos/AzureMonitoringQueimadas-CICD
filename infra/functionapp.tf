@@ -35,4 +35,10 @@ resource "azurerm_linux_function_app" "func" {
     "DB_PASSWORD"              = var.mysql_admin_password
     "DB_NAME"                  = var.sql_db_name
   }
+
+  depends_on = [
+    azurerm_service_plan.func_plan,
+    azurerm_storage_account.func_storage,
+    azurerm_mysql_flexible_server.mysql
+  ]
 }
