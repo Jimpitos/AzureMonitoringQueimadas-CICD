@@ -7,7 +7,7 @@ variable "rm" {
 variable "location" {
   description = "Regiao dos recursos Azure"
   type        = string
-  default     = "eastus2"
+  default     = "centralus"
 }
 
 variable "resource_group_name" {
