@@ -1,3 +1,9 @@
+variable "rm" {
+  description = "RM do aluno"
+  type        = string
+  default     = "555295"
+}
+
 variable "location" {
   description = "Regiao dos recursos Azure"
   type        = string
@@ -5,26 +11,39 @@ variable "location" {
 }
 
 variable "resource_group_name" {
-  default = "rg-monitor-queimadas-555295"
+  description = "Nome do Resource Group"
+  type        = string
+  default     = "rg-monitor-queimadas-555295"
 }
 
 variable "mysql_admin_user" {
-  default = "adminuser"
+  description = "Usuario admin do MySQL"
+  type        = string
+  default     = "adminuser"
 }
 
 variable "mysql_admin_password" {
-  type      = string
-  sensitive = true
+  description = "Senha admin do MySQL"
+  type        = string
+  sensitive   = true
 }
 
 variable "sql_db_name" {
-  default = "db_queimadas"
+  description = "Nome do banco de dados"
+  type        = string
+  default     = "db_queimadas"
 }
 
 variable "function_app_name" {
-  default = "func-queimadas-rm555295"
+  description = "Nome da Azure Function"
+  type        = string
+  default     = "func-queimadas-rm555295"
 }
 
 variable "storage_account_name" {
-  default = "stqueimadasfunc555295"
+  description = "Nome da Storage Account da Function"
+  type        = string
+  default     = "stqueimadasfunc555295"
 }
+# As variaveis acr_name, aci_name e webapp_image_tag serao
+# adicionadas neste mesmo arquivo no Dia 2.
